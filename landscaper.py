@@ -21,3 +21,21 @@ def cut_grass():
 def check_stats():
     cutting_implement = cutting_implements[game["Cutting Implement"]]
     print(f"You currently have ${game['money']} and are using {cutting_implement['name']} to cut grass")
+
+def shop():
+    buy = cutting_implements[game["Cutting Implement"] + 1]
+    if (buy == None):
+        print('Nothing left to buy!')
+        return 0
+    if (game["Money"] < buy["cost"]):
+        print('Not enough buy')
+        return 0
+    game["Money"] -= buy["cost"]
+    game["Cutting Implement"] += 1
+
+def win_check():
+    if(game["Cutting Implement"] == 4 and game["Money"] == 1000):
+        print("You've Won!")
+        return True
+    return False
+
