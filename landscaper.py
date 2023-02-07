@@ -17,3 +17,7 @@ def cut_grass():
     cutting_implement = cutting_implements[game["Cutting Implement"]]
     print(f"You cut the lawn with {cutting_implement['name']} and made {cutting_implement['profit']}!")
     game["Money"] += cutting_implement["profit"]
+
+def check_stats():
+    cutting_implement = cutting_implements[game["Cutting Implement"]]
+    print(f"You currently have ${game['money']} and are using {cutting_implement['name']} to cut grass")
